@@ -15,7 +15,7 @@ const getEntry = async (id) => {
       analysis: true,
     },
   });
-  return;
+  return entry;
 };
 
 const EntryPage = async ({ params }) => {
