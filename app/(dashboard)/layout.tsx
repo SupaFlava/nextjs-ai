@@ -9,23 +9,26 @@ const links = [
 const DashboardLayout = ({ children }) => {
   return (
     <div className="h-screen w-screen relative">
-      <aside className="absolute top-0 w-[200px] left-0 h-full border-r border-black/10">
-        <div>Mood</div>
-        <ul>
+      <aside className="w-full md:w-[200px] h-[60px] md:h-full bg-white border-b md:border-r md:border-b-0 border-black/10 md:absolute md:top-0 md:left-0">
+        <div className="text-center md:text-left px-4 py-2">Mood</div>
+        <ul className="flex md:block overflow-x-auto md:overflow-x-hidden mt-6">
           {links.map((link) => (
-            <li key={link.href} className="px-2 py-6 text-xl">
+            <li
+              key={link.href}
+              className="px-4 py-2 md:py-6 text-xl md:text-left"
+            >
               <Link href={link.href}>{link.label}</Link>
             </li>
           ))}
         </ul>
       </aside>
-      <div className="ml-[200px] h-full">
+      <div className="mt-[60px] md:mt-0 md:ml-[200px] h-full">
         <header className="h-[60px] border-b border-black/10">
           <div className="h-full w-full px-6 flex items-center justify-end">
             <UserButton />
           </div>
         </header>
-        <div className="h-[catch(100vh-60px)]">{children}</div>
+        <div className="flex-1 overflow-y-auto">{children}</div>
       </div>
     </div>
   );
