@@ -6,7 +6,10 @@ const links = [
   { href: "/journal", label: "Journal" },
   { href: "/history", label: "History" },
 ];
-const DashboardLayout = ({ children }) => {
+type DashboardLayoutProps = {
+  children: React.ReactNode;
+};
+const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   return (
     <div className="h-screen w-screen relative">
       <aside className="w-full md:w-[200px] h-[60px] md:h-full bg-white border-b md:border-r md:border-b-0 border-black/10 md:absolute md:top-0 md:left-0">

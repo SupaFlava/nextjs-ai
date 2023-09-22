@@ -3,7 +3,7 @@ import { getUserByClerkId } from "@/utils/auth";
 import { prisma } from "@/utils/db";
 import { NextResponse } from "next/server";
 
-export const POST = async (request) => {
+export const POST = async (request: Request) => {
   const { question } = await request.json();
   const user = await getUserByClerkId();
 
