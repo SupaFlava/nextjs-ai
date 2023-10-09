@@ -15,7 +15,9 @@ const NewEntryCard = () => {
         className="flex items-center justify-center h-32 sm:h-40 px-4 py-5 sm:p-6"
         onClick={handleOnClick}
       >
-        <span className="text-2xl sm:text-3xl text-center">New Entry</span>
+        <span className="text-2xl sm:text-3xl text-center uppercase ">
+          New Entry
+        </span>
       </div>
     </div>
   );

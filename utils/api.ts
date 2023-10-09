@@ -1,8 +1,8 @@
-const createURL = (path) => {
+const createURL = (path: string) => {
   return window.location.origin + path;
 };
 
-export const updateEntry = async (id, content) => {
+export const updateEntry = async (id: string, content: string) => {
   const res = await fetch(
     new Request(createURL(`/api/journal/${id}`), {
       method: "PATCH",
@@ -27,7 +27,7 @@ export const createNewEntry = async () => {
     return data.data;
   }
 };
-export const askQuestion = async (question) => {
+export const askQuestion = async (question: string) => {
   const res = await fetch(
     new Request(createURL(`/api/question`), {
       method: "POST",
@@ -38,4 +38,12 @@ export const askQuestion = async (question) => {
     const data = await res.json();
     return data.data;
   }
+};
+
+export const deleteEntry = async (id) => {
+  const res = await fetch(
+    new Request(createURL(`/api/entry/${id}`), {
+      method: "DELETE",
+    })
+  );
 };

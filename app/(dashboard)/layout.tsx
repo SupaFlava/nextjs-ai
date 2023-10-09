@@ -13,12 +13,14 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   return (
     <div className="h-screen w-screen relative">
       <aside className="w-full md:w-[200px] h-[60px] md:h-full bg-white border-b md:border-r md:border-b-0 border-black/10 md:absolute md:top-0 md:left-0">
-        <div className="text-center md:text-left px-4 py-2">Mood</div>
+        <div className="text-center md:text-left px-8 py-2 uppercase font-bold">
+          Mood
+        </div>
         <ul className="flex md:block overflow-x-auto md:overflow-x-hidden mt-6">
           {links.map((link) => (
             <li
               key={link.href}
-              className="px-4 py-2 md:py-6 text-xl md:text-left"
+              className="px-8 py-2 md:py-6 text-xl md:text-left"
             >
               <Link href={link.href}>{link.label}</Link>
             </li>

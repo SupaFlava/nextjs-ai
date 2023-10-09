@@ -15,6 +15,9 @@ const getEentries = async () => {
     orderBy: {
       createdAt: "desc",
     },
+    include: {
+      analysis: true,
+    },
   });
 
   return entries;
@@ -22,6 +25,7 @@ const getEentries = async () => {
 
 const JournalPage = async () => {
   const entries = await getEentries();
+  console.log("entries", entries);
   return (
     <div className="p-4 sm:p-6 md:p-10 bg-zinc-400/10 h-full">
       <h2 className="text-2xl sm:text-3xl mb-4 sm:mb-8">Journal</h2>
